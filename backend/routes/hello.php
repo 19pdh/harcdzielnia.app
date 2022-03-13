@@ -6,5 +6,5 @@ $response = [
     'message' => 'Hello world'
 ];
 
-require('../includes/return.php');
+apiReturn($status_code, $response);
 ?>

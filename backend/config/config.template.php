@@ -3,7 +3,7 @@ $config = [
     'production' => false,
     
     'site' => [
-        'base_url' => 'http://localhost',
+        'base_url' => 'http://localhost/api',
         'salt' => 'any_random_string'
     ],
 
