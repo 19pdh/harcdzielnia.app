@@ -2,7 +2,9 @@
 
 ## Getting started
 
-Create file `config/config.php` and fill it like in `config/config.template.php`.
+`git clone https://github.com/19pdh/harcdzielnia.app`
+`cd backend/config`
+Create file `config.php` and fill it like `config/config.template.php`.
 
 ## Rewrites
 
