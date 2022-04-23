@@ -12,4 +12,12 @@ Create file `config.php` and fill it like `config/config.template.php`.
 
 ## Rewrites
 
-Basically you can access API at `routes/<name>.php`, but you can also redirect traffic from the configured `base_url` (for example `http://localhost/api/<name>`) to `routes/<name>.php`. **Remember to filter the characters in your regular expression to prevent directory traversal attacks.**
+Basically you can access API at `routes/<name>.php`, but you should rwerite endpoints on your own with `id` param in URL.
+
+Example for Apache:
+
+```
+RewriteRule items/([0-9]+)$ routes/items.php?id=$1
+```
+
+(`/items/1 -> /routes/items.php?id=1`)

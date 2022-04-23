@@ -8,7 +8,10 @@ $config = [
     ],
 
     'db' => [
-        // database config
+        'host' => 'localhost',
+        'user' => 'root',
+        'pass' => '',
+        'name' => 'harcdzielnia'
     ]
 ];
 ?>
