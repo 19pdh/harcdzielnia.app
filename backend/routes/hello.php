@@ -1,4 +1,5 @@
 <?php
+$req_method = "GET";
 require('../includes/header.php');
 
 $status_code = 200;
