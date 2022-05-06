@@ -17,7 +17,7 @@ Basically you can access API at `routes/<name>.php`, but you should rewrite endp
 Example for Apache:
 
 ```
-RewriteRule items/([0-9]+)$ routes/items.php?id=$1
+RewriteRule items/([0-9]+)$ routes/item.php?id=$1
 ```
 
-(`/items/1 -> /routes/items.php?id=1`)
+(`/items/1 -> /routes/item.php?id=1`)
