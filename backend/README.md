@@ -4,6 +4,8 @@
 
 You need PHP installed (e.g. `sudo apt install php` on Ubuntu)
 
+Then run:
+
 `git clone https://github.com/19pdh/harcdzielnia.app`
 
 `cd backend/config`
@@ -12,7 +14,7 @@ Create file `config.php` and fill it like `config.template.php`.
 
 ## Rewrites
 
-Basically you can access API at `routes/<name>.php`, but you should rewrite endpoints on your own with `id` param in URL.
+Basically you can access API at `routes/<name>.php` and use basic GET params, but you should rewrite endpoints on your own.
 
 Example for Apache:
 
