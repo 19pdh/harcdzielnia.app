@@ -1,7 +1,7 @@
 <?php
 session_start();
 // user authentication, checking permissions in database
-if ($permission !== $userPerms) {
+if ($permission > $userPerms) {
     $status_code = 403;
     $response = [
         'status' => 'Error',
