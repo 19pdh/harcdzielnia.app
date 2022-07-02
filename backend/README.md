@@ -34,6 +34,12 @@ RewriteRule items/([0-9]+)/hide$ routes/management/hide-item.php?id=$1
 RewriteRule users$ routes/admin/users.php
 RewriteRule users/add$ routes/admin/add-user.php
 RewriteRule users/([0-9]+)/delete$ routes/admin/delete-user.php?id=$1
+
+RewriteRule user$ routes/auth/user.php
+RewriteRule user/login$ routes/auth/login.php
+RewriteRule user/logout$ routes/auth/logout.php
+RewriteRule user/reset-password$ routes/auth/reset-password.php
+RewriteRule user/change-password$ routes/auth/change-password.php
 ```
 
 (e.g. `/items/1 -> /routes/item.php?id=1`)
@@ -89,6 +95,7 @@ RewriteRule users/([0-9]+)/delete$ routes/admin/delete-user.php?id=$1
 
 ### User
 
+**GET** `/user` - get currently logged in user data
 **POST** `/user/login` - user login
 |Name|Description|
 |---------|---------|
@@ -100,14 +107,17 @@ RewriteRule users/([0-9]+)/delete$ routes/admin/delete-user.php?id=$1
 |Name|Description|
 |---------|---------|
 |csrf|CSRF token from cookie "csrf"|
+|password|New user password|
+|old-password|Old user password|
 **POST** `/user/reset-password` - reset user password
 |Name|Description|
 |---------|---------|
 |csrf|CSRF token from cookie "csrf"|
+|email|User email|
 
 ### Admin
 
-**GET** `/users` list users
+**GET** `/users` - list users
 **POST** `/users/add` - add new user (sending default password via email)
 |Name|Description|
 |---------|---------|
