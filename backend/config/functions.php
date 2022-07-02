@@ -13,7 +13,7 @@ header('X-Content-Type-Options: nosniff');
 
 date_default_timezone_set('Europe/Warsaw');
 $timestamp = time();
-$userAgent = sanitizeStr($_SERVER['HTTP_USER_AGENT']);
+$user_agent = sanitizeStr($_SERVER['HTTP_USER_AGENT']);
 
 $db = new mysqli($config['db']['host'], $config['db']['user'], $config['db']['pass'], $config['db']['name']);
 $db->set_charset('utf8');
@@ -41,12 +41,12 @@ function getCsrf(){
         if ($token_age <= $config['site']['csrf_time']){  
             return $_SESSION['csrf'];
         } else {
-            $_SESSION['csrf'] = sha1(randomStr().$userAgent);
+            $_SESSION['csrf'] = sha1(randomStr().$user_agent);
             $_SESSION['csrf_time'] = $timestamp;
             return $_SESSION['csrf'];
         }
     } else {
-        $_SESSION['csrf'] = sha1(randomStr().$userAgent);
+        $_SESSION['csrf'] = sha1(randomStr().$user_agent);
         $_SESSION['csrf_time'] = $timestamp;
         return $_SESSION['csrf'];
     }
@@ -74,4 +74,19 @@ function verifyCsrf($token){
         } else {
             return false;
         }
+}
+
+function userPerms($code){
+    switch ($code){
+        case 0:
+          $perms = "Użytkownik";
+          break;
+              case 1:
+                $perms = "Redaktor serwisu";
+                break;
+                    case 2:
+                        $perms = "Administrator";
+                        break;
+    return $perms;
     }
+}
