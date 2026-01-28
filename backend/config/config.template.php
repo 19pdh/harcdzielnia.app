@@ -4,7 +4,9 @@ $config = [
 
     'site' => [
         'base_url' => 'http://localhost/api',
-        'salt' => 'any_random_string'
+        'domain' => 'localhost',
+        'salt' => 'any_random_string',
+        'csrf_time' => '1800' // In seconds
     ],
 
     'db' => [
